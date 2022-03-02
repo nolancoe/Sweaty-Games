@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sweaty.Games </title>
+    <link rel="stylesheet" href="{% static 'website/css/main.css' %}">
+</head>
+
+<body class='content'>
+
+    <H1>Register</H1>
+
+    <br/>
+<div class="form-group d-flex justify-content-center">
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button class="btn btn-secondary">Sign Up!</button>
+    </form>
+</div>
+
+<br/>
+<h2>
+    <a href="{% url 'login' %}">Already a Member? Click here to log in!</a>
+</h2>
+
+</body>
+
+{% endblock %}
+
